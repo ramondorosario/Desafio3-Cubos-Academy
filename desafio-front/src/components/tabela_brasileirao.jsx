@@ -48,107 +48,78 @@ export function TabelaBrasileirao() {
 				<thead>
 					<tr>
 						<td>
-							<div>
-								<div>Posição</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<span>Posição</span>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>Time</div>
-								<img />
-							</div>
+							Time
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Pontos">PTS</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Pontos">PTS</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Empate">E</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Empates">E</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Vitória">V</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Vitorias">V</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Derrota">D</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Derrotas">D</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Gols feitos">GF</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Gols feitos">GF</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Gols sofridos">GS</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Gols sofridos">GS</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 						<td>
-							<div>
-								<div>
-									<abbr title="Saldo de gols">SG</abbr>
-								</div>
-								<img
-									src="https://systemuicons.com/images/icons/sort.svg"
-									alt=""
-								/>
-							</div>
+							<abbr title="Saldo de gols">SG</abbr>
+							<img
+								src="https://systemuicons.com/images/icons/sort.svg"
+								alt=""
+							/>
 						</td>
 					</tr>
 				</thead>
 				<tbody>
-					{registro.map((registro, i) => {
+					{registro.map((registro) => {
 						return (
 							<GerarTabela
 								posicao={registro.posicao}
 								time={registro.nome}
 								pts={registro.pontos}
-								empate={registro.empate}
+								empate={registro.empates}
 								vitoria={registro.vitorias}
 								derrota={registro.derrotas}
 								golsFeitos={registro.golsFeitos}
