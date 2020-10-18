@@ -1,0 +1,194 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Sora', sans-serif;
+	background-color: rgb(236, 235, 220);
+	min-height: 40vh;
+}
+
+/* Layout Cabecalho da página */
+.cabecalho {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2b7148;
+	color: white;
+	padding: 1rem;
+}
+
+.cabecalho h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.centro {
+	display: flex;
+	justify-content: space-between;
+	max-width: 75rem;
+	width: 100%;
+	align-items: center;
+}
+
+.form {
+	border-radius: 0.3em;
+	border: 2px solid transparent;
+	font-size: 0.85em;
+}
+
+.form button {
+	background-color: #04375c;
+	padding: 0.35rem 1.6rem;
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 0.25em;
+	font-size: 1em;
+}
+
+.form label {
+	margin: 0 1.5em;
+}
+
+.form input {
+	padding: 0.3rem;
+	border-radius: 0.3em;
+	border: 1.5px solid transparent;
+	margin-left: 0.5em;
+}
+
+/* Layout conteúdo do site */
+/* Estruturado o corpo do site */
+.conteudo {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.colunas {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 75rem;
+	width: 100%;
+}
+
+/* Layoute tabela do resultado dos jogos */
+.partidas {
+	display: flex;
+	flex-direction: column;
+	max-width: 25rem;
+	flex-grow: 1;
+	margin-right: 5rem;
+	margin-bottom: 2rem;
+}
+
+.partidas-cabecalho {
+	background-color: rgb(138, 185, 157);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.2em;
+}
+
+/* Opacidade das setas quando nao selecionada */
+.partidas-cabecalho .desativado {
+	opacity: 0.5;
+}
+
+.partidas-cabecalho h2 {
+	padding: 1rem 0;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.partidas table {
+	display: flex;
+	justify-content: space-around;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+.partidas td {
+	padding: 0.5rem;
+	text-align: center;
+}
+
+.partidas .time-casa {
+	text-align: right;
+}
+
+.partidas .time-fora {
+	text-align: left;
+}
+
+.partidas .gols {
+	font-size: 1.5em;
+}
+
+.partidas .gols-input {
+	width: 2em;
+	height: 2em;
+	padding-left: 2.5px;
+}
+
+.partidas table {
+	position: relative;
+}
+
+.partidas .botao-td {
+	position: absolute;
+	right: 0;
+}
+
+.partidas button {
+	border: none;
+	border-radius: 50%;
+	background-color: rgb(138, 185, 157);
+	padding: 0.2rem;
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.partidas button img {
+	width: 100%;
+}
+
+/* Layout tabela geral do brasileirão */
+.tabela-geral {
+	display: flex;
+	background-color: white;
+	max-width: 50rem;
+	flex: 1;
+}
+
+.tabela-geral table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tabela-geral thead {
+	background-color: rgb(138, 185, 157);
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.tabela-geral thead td {
+	padding: 0.2em 0.4em;
+}
+
+.tabela-geral thead td > div {
+	display: flex;
+	align-items: center;
+}
+
+.tabela-geral thead td img {
+	margin-left: 0.2em;
+}
+
+.tabela-geral tbody td {
+	text-align: right;
+	padding: 0.25em 0.5em;
+}
