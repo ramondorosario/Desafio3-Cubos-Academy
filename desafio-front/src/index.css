@@ -28,7 +28,7 @@ body {
 .centro {
 	display: flex;
 	justify-content: space-between;
-	max-width: 75rem;
+	max-width: 78rem;
 	width: 100%;
 	align-items: center;
 }
@@ -72,7 +72,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	max-width: 75rem;
+	max-width: 78rem;
 	width: 100%;
 }
 
@@ -82,7 +82,7 @@ body {
 	flex-direction: column;
 	max-width: 25rem;
 	width: 100%;
-	margin-right: 5rem;
+	margin-right: 2rem;
 	margin-bottom: 2rem;
 }
 
@@ -164,7 +164,7 @@ body {
 
 .tabela-geral table {
 	border-collapse: collapse;
-	flex-grow: 1;
+	width: 100%;
 }
 
 .tabela-geral thead {
