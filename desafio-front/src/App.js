@@ -1,9 +1,9 @@
 import React from 'react';
 import './index.css';
 
-import { Cabecalho } from './components/cabecalho';
-import { TabelaResultados } from './components/tabela_jogos';
-import { TabelaBrasileirao } from './components/tabela_brasileirao';
+import { Cabecalho } from './components/cabecalho/cabecalho';
+import { TabelaResultados } from './components/tabela-jogos/tabela_jogos';
+import { TabelaBrasileirao } from './tabela_brasileirao/tabela_brasileirao';
 
 export default function App() {
 	return (

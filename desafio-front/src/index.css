@@ -71,6 +71,7 @@ body {
 .colunas {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	max-width: 78rem;
 	width: 100%;
@@ -80,7 +81,7 @@ body {
 .partidas {
 	display: flex;
 	flex-direction: column;
-	max-width: 25rem;
+	max-width: 26rem;
 	width: 100%;
 	margin-right: 2rem;
 	margin-bottom: 2rem;
@@ -104,16 +105,29 @@ body {
 	font-weight: bold;
 }
 
-.partidas table {
-	display: flex;
-	justify-content: space-around;
-	border-collapse: collapse;
+.partidas .tabela {
 	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+
+.partidas table {
+	border-collapse: collapse;
 }
 
 .partidas td {
-	padding: 0.5rem;
+	padding: 0.25em 0.3em;
 	text-align: center;
+	vertical-align: middle;
+}
+
+.partidas .gols {
+	font-size: 1.5em;
+	width: 2em;
+}
+
+.partidas .gols-input {
+	width: 4ch;
 }
 
 .partidas .time-casa {
@@ -124,17 +138,7 @@ body {
 	text-align: left;
 }
 
-.partidas .gols {
-	font-size: 1.5em;
-}
-
-.partidas .gols-input {
-	width: 2em;
-	height: 2em;
-	padding-left: 2.5px;
-}
-
-.partidas table {
+.partidas .tabela {
 	position: relative;
 }
 
@@ -143,16 +147,17 @@ body {
 	right: 0;
 }
 
-.partidas button {
-	border: none;
-	border-radius: 50%;
+.partidas .botao-td div {
+	display: flex;
+	justify-content: center;
 	background-color: rgb(138, 185, 157);
+	border-radius: 50%;
 	padding: 0.2rem;
 	width: 1.6rem;
 	height: 1.6rem;
 }
 
-.partidas button img {
+.partidas .botao-td img {
 	width: 100%;
 }
 

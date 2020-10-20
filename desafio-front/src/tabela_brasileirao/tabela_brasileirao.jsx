@@ -1,32 +1,6 @@
 import React from 'react';
 
-const GerarTabela = ({
-	posicao,
-	time,
-	pts,
-	jogos,
-	empate,
-	vitoria,
-	derrota,
-	golsFeitos,
-	golsSofridos,
-	saldoDeGols,
-}) => {
-	return (
-		<tr>
-			<td>{posicao}</td>
-			<td>{time}</td>
-			<td>{pts}</td>
-			<td>{jogos}</td>
-			<td>{empate}</td>
-			<td>{vitoria}</td>
-			<td>{derrota}</td>
-			<td>{golsFeitos}</td>
-			<td>{golsSofridos}</td>
-			<td>{saldoDeGols}</td>
-		</tr>
-	);
-};
+import { GerarTabela } from './gerar_tabela';
 
 const ordenarNumeros = (registro, setRegistro, propriedade) => {
 	const [...ordenado] = registro;
@@ -36,6 +10,7 @@ const ordenarNumeros = (registro, setRegistro, propriedade) => {
 
 	if (verificar) setRegistro([...ordenado.reverse()]);
 	else setRegistro([...ordenado]);
+	return ordenado;
 };
 
 const botaoImg = (botaoSeta, nomeBotao) => {
@@ -57,9 +32,7 @@ export function TabelaBrasileirao() {
 	});
 
 	React.useEffect(() => {
-		fetch(
-			'https://desafio-3-back-cubos-academy.herokuapp.com/classificacao'
-		)
+		fetch('https://desafio-3-back-cubos-academy.herokuapp.com/classificacao')
 			.then((res) => res.json())
 			.then((resJson) => {
 				const totalRegistros = resJson.dados.map((x, i) => {
@@ -85,15 +58,16 @@ export function TabelaBrasileirao() {
 								src={`${botaoImg(botaoSeta, 'posicao')}`}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'posicao'
 									);
-
 									setBotaoSeta({
 										ordenar: 'posicao',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao <
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -105,21 +79,19 @@ export function TabelaBrasileirao() {
 								alt=""
 								onClick={() => {
 									const [...ordenado] = registro;
-									ordenado.sort((a, b) =>
-										a.nome.localeCompare(b.nome)
-									);
+									ordenado.sort((a, b) => a.nome.localeCompare(b.nome));
 
-									const verificar = ordenado.every(
-										(x, i) => x === registro[i]
-									);
+									const verificar = ordenado.every((x, i) => x === registro[i]);
 
-									if (verificar)
-										setRegistro([...ordenado.reverse()]);
+									if (verificar) setRegistro([...ordenado.reverse()]);
 									else setRegistro([...ordenado]);
 
 									setBotaoSeta({
 										ordenar: 'nome',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].nome.localeCompare(
+												ordenado[ordenado.length - 1].nome
+											) === -1,
 									});
 								}}
 							/>
@@ -130,14 +102,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'pontos')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'pontos'
 									);
 									setBotaoSeta({
 										ordenar: 'pontos',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao >
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -145,20 +119,19 @@ export function TabelaBrasileirao() {
 						<td>
 							<abbr title="Partidas Jogadas">PJ</abbr>
 							<img
-								src={`${botaoImg(
-									botaoSeta,
-									'partidas jogadas'
-								)}`}
+								src={`${botaoImg(botaoSeta, 'partidas jogadas')}`}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'jogos'
 									);
 									setBotaoSeta({
 										ordenar: 'partidas jogadas',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao <
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -169,14 +142,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'empates')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'empates'
 									);
 									setBotaoSeta({
 										ordenar: 'empates',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao <
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -187,14 +162,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'vitorias')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'vitorias'
 									);
 									setBotaoSeta({
 										ordenar: 'vitorias',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao >
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -205,14 +182,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'derrotas')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'derrotas'
 									);
 									setBotaoSeta({
 										ordenar: 'derrotas',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao <
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -223,14 +202,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'gols feitos')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'golsFeitos'
 									);
 									setBotaoSeta({
 										ordenar: 'gols feitos',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao >
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -241,14 +222,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'gols sofridos')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'golsSofridos'
 									);
 									setBotaoSeta({
 										ordenar: 'gols sofridos',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao <
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
@@ -259,14 +242,16 @@ export function TabelaBrasileirao() {
 								src={botaoImg(botaoSeta, 'saldo de gols')}
 								alt=""
 								onClick={() => {
-									ordenarNumeros(
+									const ordenado = ordenarNumeros(
 										registro,
 										setRegistro,
 										'saldoDeGols'
 									);
 									setBotaoSeta({
 										ordenar: 'saldo de gols',
-										condicao: !botaoSeta.condicao,
+										condicao:
+											ordenado[0].posicao >
+											ordenado[ordenado.length - 1].posicao,
 									});
 								}}
 							/>
