@@ -1,15 +1,21 @@
 const Koa = require('koa');
 
 const server = new Koa();
-const bodyParser = require('koa-bodyparser');
 
+const bodyParser = require('koa-bodyparser');
 const router = require('./src/routes');
+
+const response = require('./src/utils/response');
 
 server.use(bodyParser());
 server.use(router.routes());
 
 server.use((ctx) => {
-	ctx.body = 'Metodo Inválido';
+	response(ctx, 405, 'metodo inválido');
 });
 
-server.listen('8081', () => console.log('Servidor rodando!'));
+require('dotenv').config();
+
+const PORT = process.env.PORT || 8081;
+
+server.listen(PORT, () => console.log('Servidor rodando na porta ', PORT));
