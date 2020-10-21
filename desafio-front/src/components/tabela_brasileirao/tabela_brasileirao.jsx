@@ -32,14 +32,13 @@ export function TabelaBrasileirao() {
 	});
 
 	React.useEffect(() => {
-		fetch('https://desafio-3-back-cubos-academy.herokuapp.com/classificacao')
+		fetch('http://localhost:8081/classificacao')
 			.then((res) => res.json())
 			.then((resJson) => {
-				const totalRegistros = resJson.dados.map((x, i) => {
+				const totalRegistros = resJson.dados.response.map((x, i) => {
 					const registro = {
 						...x,
 						posicao: i + 1,
-						saldoDeGols: x.golsFeitos - x.golsSofridos,
 					};
 					return registro;
 				});
@@ -263,7 +262,7 @@ export function TabelaBrasileirao() {
 						return (
 							<GerarTabela
 								posicao={registro.posicao}
-								time={registro.nome}
+								time={registro.time}
 								pts={registro.pontos}
 								jogos={registro.jogos}
 								empate={registro.empates}

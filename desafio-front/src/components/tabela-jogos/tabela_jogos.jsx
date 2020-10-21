@@ -7,10 +7,10 @@ export function TabelaResultados() {
 	const [partidas, setPartidas] = React.useState([]);
 
 	React.useEffect(() => {
-		fetch(`https://desafio-3-back-cubos-academy.herokuapp.com/jogos/${rodada}`)
+		fetch(`http://localhost:8081/jogos/${rodada}`)
 			.then((res) => res.json())
 			.then((partidas) => {
-				setPartidas(partidas.dados);
+				setPartidas(partidas.dados.response);
 			});
 	}, [rodada]);
 

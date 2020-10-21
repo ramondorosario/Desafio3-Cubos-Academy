@@ -12,7 +12,7 @@ const atualizarTime = (nomeTime, golsFeitos, golsSofridos, pontuacao) => {
 			empates: pontuacao === 1 ? 1 : 0,
 			golsFeitos,
 			golsSofridos,
-			saldo: golsFeitos - golsSofridos,
+			saldoDeGols: golsFeitos - golsSofridos,
 		});
 		return;
 	}
@@ -24,7 +24,7 @@ const atualizarTime = (nomeTime, golsFeitos, golsSofridos, pontuacao) => {
 	tabela[id].empates += pontuacao === 1 ? 1 : 0;
 	tabela[id].golsFeitos += golsFeitos;
 	tabela[id].golsSofridos += golsSofridos;
-	tabela[id].saldo += golsFeitos - golsSofridos;
+	tabela[id].saldoDeGols += golsFeitos - golsSofridos;
 };
 
 const gerarTabela = (dados) => {

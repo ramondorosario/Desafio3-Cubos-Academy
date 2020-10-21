@@ -25,7 +25,6 @@ const autenticar = async (ctx) => {
 	);
 
 	return response(ctx, 200, 'usuario autenticado', {
-		...usuario,
 		token,
 	});
 };

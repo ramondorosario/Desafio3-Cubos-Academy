@@ -4,7 +4,7 @@ const response = (ctx, status, mensagem, resultado) => {
 		status: status >= 200 && status <= 399 ? 'sucesso' : 'erro',
 		dados: {
 			mensagem,
-			dados: resultado,
+			response: resultado,
 		},
 	};
 };
