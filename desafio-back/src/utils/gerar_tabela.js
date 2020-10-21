@@ -43,5 +43,4 @@ const gerarTabela = (dados) => {
 	});
 	return tabela;
 };
-
 module.exports = gerarTabela;

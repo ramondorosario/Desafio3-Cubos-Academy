@@ -8,5 +8,4 @@ const response = (ctx, status, mensagem, resultado) => {
 		},
 	};
 };
-
 module.exports = response;

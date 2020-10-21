@@ -1,7 +1,7 @@
 const Jwt = require('jsonwebtoken');
+const Password = require('../utils/password');
 const response = require('../utils/response');
 const users = require('../repositories/users');
-const Password = require('../utils/password');
 
 require('dotenv').config();
 

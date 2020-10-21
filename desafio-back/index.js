@@ -7,11 +7,11 @@ const server = new Koa();
 const bodyParser = require('koa-bodyparser');
 const router = require('./src/routes');
 
-const response = require('./src/utils/response');
-
 server.use(cors());
 server.use(bodyParser());
 server.use(router.routes());
+
+const response = require('./src/utils/response');
 
 server.use((ctx) => {
 	response(ctx, 405, 'metodo inválido');

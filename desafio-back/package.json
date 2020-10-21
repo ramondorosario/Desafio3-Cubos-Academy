@@ -10,7 +10,6 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@koa/cors": "^3.1.0",
 		"bcryptjs": "^2.4.3",
 		"dotenv": "^8.2.0",
 		"jsonwebtoken": "^8.5.1",
@@ -18,7 +17,8 @@
 		"koa-bodyparser": "^4.3.0",
 		"koa-router": "^9.4.0",
 		"nodemon": "^2.0.6",
-		"pg": "^8.4.1"
+		"pg": "^8.4.1",
+		"@koa/cors": "^3.1.0"
 	},
 	"devDependencies": {
 		"eslint": "^7.10.0",
