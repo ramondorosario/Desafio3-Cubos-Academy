@@ -1,11 +1,16 @@
 import React from 'react';
 
-export function GerarResultado({ timeCasa, golsCasa, timeFora, golsFora }) {
+export function GerarResultado({
+	timeCasa,
+	golsCasa,
+	timeFora,
+	golsFora,
+	token,
+}) {
 	const [check, setCheck] = React.useState(false);
 	const [editarGol, setEditarGol] = React.useState(false);
 	const [golsInputCasa, setGolInputCasa] = React.useState(golsCasa);
 	const [golsInputFora, setGolInputFora] = React.useState(golsFora);
-	const [autenticado, setAutenticado] = React.useState(false); // Testando o botão de editar
 
 	return (
 		<tr>
@@ -42,7 +47,7 @@ export function GerarResultado({ timeCasa, golsCasa, timeFora, golsFora }) {
 			<td className="time-fora">{timeFora}</td>
 			<td
 				className="botao-td"
-				hidden={!autenticado}
+				hidden={!token}
 				onClick={() => {
 					setEditarGol(!editarGol);
 					setCheck(!check);

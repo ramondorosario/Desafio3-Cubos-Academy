@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GerarResultado } from './gerar_resultado';
 
-export function TabelaResultados() {
+export function TabelaResultados(props) {
 	const [rodada, setRodada] = React.useState(1);
 	const [partidas, setPartidas] = React.useState([]);
 
@@ -53,6 +53,7 @@ export function TabelaResultados() {
 									golsCasa={partida.gols_casa}
 									timeFora={partida.time_visitante}
 									golsFora={partida.gols_visitante}
+									token={props.token}
 								/>
 							);
 						})}

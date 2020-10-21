@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Cabecalho() {
+export function Cabecalho(props) {
 	const [email, setEmail] = React.useState();
 	const [senha, setSenha] = React.useState();
 
@@ -51,6 +51,7 @@ export function Cabecalho() {
 									if (res.dados.response && res.dados.response.token) {
 										const { token } = res.dados.response;
 										localStorage.setItem('token', token);
+										props.onLogin(token);
 									}
 								});
 						}}
