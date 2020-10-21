@@ -1,11 +1,14 @@
 import React from 'react';
 
 export function GerarResultado({
+	id,
 	timeCasa,
 	golsCasa,
 	timeFora,
 	golsFora,
 	token,
+	placarAlterado,
+	onPlacar,
 }) {
 	const [check, setCheck] = React.useState(false);
 	const [editarGol, setEditarGol] = React.useState(false);
@@ -51,6 +54,29 @@ export function GerarResultado({
 				onClick={() => {
 					setEditarGol(!editarGol);
 					setCheck(!check);
+
+					if (editarGol) {
+						const dados = {
+							id,
+							golsCasa: golsInputCasa,
+							golsVisitante: golsInputFora,
+						};
+						fetch('http://localhost:8081/jogos', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+								Authorization: token && `Bearer ${token}`,
+							},
+							body: JSON.stringify(dados),
+						})
+							.then((res) => res.json())
+							.then((res) => {
+								if (res.dados.response) {
+									console.log(res, id);
+									onPlacar(!placarAlterado);
+								}
+							});
+					}
 				}}
 			>
 				<div>

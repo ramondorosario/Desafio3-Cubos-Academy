@@ -6,15 +6,21 @@ import { TabelaResultados } from './components/tabela-jogos/tabela_jogos';
 import { TabelaBrasileirao } from './components/tabela_brasileirao/tabela_brasileirao';
 
 export default function App() {
-	const [token, setToken] = React.useState();
+	const [token, setToken] = React.useState(localStorage.getItem('token'));
+	const [placarAlterado, setPlacarAlterado] = React.useState();
+
 	return (
 		<>
-			<Cabecalho onLogin={(token) => setToken(token)} token={token} />
+			<Cabecalho onLogin={setToken} />
 			<div className="conteudo">
 				<div className="centro">
 					<div className="colunas">
-						<TabelaResultados token={token} />
-						<TabelaBrasileirao />
+						<TabelaResultados
+							token={token}
+							placarAlterado={placarAlterado}
+							onPlacar={setPlacarAlterado}
+						/>
+						<TabelaBrasileirao placarAlterado={placarAlterado} />
 					</div>
 				</div>
 			</div>

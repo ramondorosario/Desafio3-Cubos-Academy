@@ -24,7 +24,7 @@ const botaoImg = (botaoSeta, nomeBotao) => {
 	return 'https://systemuicons.com/images/icons/sort.svg';
 };
 
-export function TabelaBrasileirao() {
+export function TabelaBrasileirao({ placarAlterado }) {
 	const [registro, setRegistro] = React.useState([]);
 	const [botaoSeta, setBotaoSeta] = React.useState({
 		ordenar: null,
@@ -44,7 +44,7 @@ export function TabelaBrasileirao() {
 				});
 				setRegistro(totalRegistros);
 			});
-	}, []);
+	}, [placarAlterado]);
 
 	return (
 		<div className="tabela-geral">

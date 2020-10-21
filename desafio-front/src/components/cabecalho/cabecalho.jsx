@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Cabecalho(props) {
+export function Cabecalho({ onLogin }) {
 	const [email, setEmail] = React.useState();
 	const [senha, setSenha] = React.useState();
 
@@ -14,26 +14,36 @@ export function Cabecalho(props) {
 						e.preventDefault();
 					}}
 				>
-					<label>
-						Email
-						<input
-							type="email"
-							onChange={(e) => {
-								setEmail(e.target.value);
-							}}
-						/>
-					</label>
-					<label>
-						Senha
-						<input
-							type="password"
-							onChange={(e) => {
-								setSenha(e.target.value);
-							}}
-						/>
-					</label>
+					{!localStorage.getItem('token') && (
+						<>
+							<label>
+								Email
+								<input
+									type="email"
+									onChange={(e) => {
+										setEmail(e.target.value);
+									}}
+								/>
+							</label>
+							<label>
+								Senha
+								<input
+									type="password"
+									onChange={(e) => {
+										setSenha(e.target.value);
+									}}
+								/>
+							</label>
+						</>
+					)}
+
 					<button
 						onClick={() => {
+							if (localStorage.getItem('token')) {
+								onLogin('');
+								localStorage.clear();
+								return;
+							}
 							const dados = {
 								email: email,
 								password: senha,
@@ -51,12 +61,12 @@ export function Cabecalho(props) {
 									if (res.dados.response && res.dados.response.token) {
 										const { token } = res.dados.response;
 										localStorage.setItem('token', token);
-										props.onLogin(token);
+										onLogin(token);
 									}
 								});
 						}}
 					>
-						Logar
+						{!localStorage.getItem('token') ? 'Logar' : 'Deslogar'}
 					</button>
 				</form>
 			</div>

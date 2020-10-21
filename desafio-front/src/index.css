@@ -105,6 +105,14 @@ body {
 	font-weight: bold;
 }
 
+.partidas .carregando {
+	background-color: white;
+	height: 4em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .partidas .tabela {
 	background-color: white;
 	display: flex;
