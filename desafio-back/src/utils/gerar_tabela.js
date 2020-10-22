@@ -1,11 +1,18 @@
 let tabela = [];
 
 /** Atualiza os dados de um time */
-const atualizarTime = (nomeTime, golsFeitos, golsSofridos, pontuacao) => {
+const atualizarTime = (
+	nomeTime,
+	escudo,
+	golsFeitos,
+	golsSofridos,
+	pontuacao
+) => {
 	const id = tabela.findIndex((x) => x.time === nomeTime);
 	if (id === -1) {
 		tabela.push({
 			time: nomeTime,
+			escudo,
 			jogos: 1,
 			pontos: pontuacao,
 			vitorias: pontuacao === 3 ? 1 : 0,
@@ -33,14 +40,50 @@ const gerarTabela = (dados) => {
 	tabela = [];
 	dados.forEach((x) => {
 		if (x.gols_casa > x.gols_visitante) {
-			atualizarTime(x.time_casa, x.gols_casa, x.gols_visitante, 3);
-			atualizarTime(x.time_visitante, x.gols_visitante, x.gols_casa, 0);
+			atualizarTime(
+				x.time_casa,
+				x.escudo_casa,
+				x.gols_casa,
+				x.gols_visitante,
+				3
+			);
+			atualizarTime(
+				x.time_visitante,
+				x.escudo_visitante,
+				x.gols_visitante,
+				x.gols_casa,
+				0
+			);
 		} else if (x.gols_casa < x.gols_visitante) {
-			atualizarTime(x.time_casa, x.gols_casa, x.gols_visitante, 0);
-			atualizarTime(x.time_visitante, x.gols_visitante, x.gols_casa, 3);
+			atualizarTime(
+				x.time_casa,
+				x.escudo_casa,
+				x.gols_casa,
+				x.gols_visitante,
+				0
+			);
+			atualizarTime(
+				x.time_visitante,
+				x.escudo_visitante,
+				x.gols_visitante,
+				x.gols_casa,
+				3
+			);
 		} else {
-			atualizarTime(x.time_casa, x.gols_casa, x.gols_visitante, 1);
-			atualizarTime(x.time_visitante, x.gols_visitante, x.gols_casa, 1);
+			atualizarTime(
+				x.time_casa,
+				x.escudo_casa,
+				x.gols_casa,
+				x.gols_visitante,
+				1
+			);
+			atualizarTime(
+				x.time_visitante,
+				x.escudo_visitante,
+				x.gols_visitante,
+				x.gols_casa,
+				1
+			);
 		}
 	});
 	return tabela;
