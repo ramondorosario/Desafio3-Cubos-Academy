@@ -8,8 +8,8 @@ const ordenarNumeros = (registro, setRegistro, propriedade) => {
 
 	const verificar = ordenado.every((x, i) => x === registro[i]);
 
-	if (verificar) setRegistro([...ordenado.reverse()]);
-	else setRegistro([...ordenado]);
+	if (verificar) setRegistro(ordenado.reverse());
+	else setRegistro(ordenado);
 	return ordenado;
 };
 
@@ -82,8 +82,8 @@ export function TabelaBrasileirao({ placarAlterado }) {
 
 									const verificar = ordenado.every((x, i) => x === registro[i]);
 
-									if (verificar) setRegistro([...ordenado.reverse()]);
-									else setRegistro([...ordenado]);
+									if (verificar) setRegistro(ordenado.reverse());
+									else setRegistro(ordenado);
 
 									setBotaoSeta({
 										ordenar: 'nome',
@@ -271,6 +271,7 @@ export function TabelaBrasileirao({ placarAlterado }) {
 								golsFeitos={registro.golsFeitos}
 								golsSofridos={registro.golsSofridos}
 								saldoDeGols={registro.saldoDeGols}
+								key={registro.id}
 							/>
 						);
 					})}
