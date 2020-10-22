@@ -3,6 +3,7 @@ const response = require('../utils/response');
 
 require('dotenv').config();
 
+/** Faz a validação de um usuário */
 const verify = async (ctx, next) => {
 	if (!ctx.headers.authorization)
 		return response(ctx, 403, 'usuário não autenticado');
