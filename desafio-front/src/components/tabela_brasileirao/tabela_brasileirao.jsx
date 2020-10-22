@@ -78,7 +78,7 @@ export function TabelaBrasileirao({ placarAlterado }) {
 								alt=""
 								onClick={() => {
 									const [...ordenado] = registro;
-									ordenado.sort((a, b) => a.nome.localeCompare(b.nome));
+									ordenado.sort((a, b) => a.time.localeCompare(b.time));
 
 									const verificar = ordenado.every((x, i) => x === registro[i]);
 
@@ -88,8 +88,8 @@ export function TabelaBrasileirao({ placarAlterado }) {
 									setBotaoSeta({
 										ordenar: 'nome',
 										condicao:
-											ordenado[0].nome.localeCompare(
-												ordenado[ordenado.length - 1].nome
+											ordenado[0].time.localeCompare(
+												ordenado[ordenado.length - 1].time
 											) === -1,
 									});
 								}}
