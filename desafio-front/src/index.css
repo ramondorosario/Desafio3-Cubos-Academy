@@ -60,7 +60,7 @@ body {
 }
 
 /* Layout conteúdo do site */
-/* Estruturado o corpo do site */
+/* Estrutura do corpo do site */
 .conteudo {
 	display: flex;
 	justify-content: center;
@@ -76,7 +76,7 @@ body {
 	width: 100%;
 }
 
-/* Layoute tabela do resultado dos jogos */
+/* Layout tabela do resultado dos jogos */
 .partidas {
 	display: flex;
 	flex-direction: column;
@@ -93,7 +93,6 @@ body {
 	padding: 0 0.2em;
 }
 
-/* Opacidade das setas quando nao selecionada */
 .partidas-cabecalho .desativado {
 	opacity: 0.5;
 }
