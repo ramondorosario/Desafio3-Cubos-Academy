@@ -1,5 +1,6 @@
 let tabela = [];
 
+/** Atualiza os dados de um time */
 const atualizarTime = (nomeTime, golsFeitos, golsSofridos, pontuacao) => {
 	const id = tabela.findIndex((x) => x.time === nomeTime);
 	if (id === -1) {
@@ -27,6 +28,7 @@ const atualizarTime = (nomeTime, golsFeitos, golsSofridos, pontuacao) => {
 	tabela[id].saldoDeGols += golsFeitos - golsSofridos;
 };
 
+/** Gera a tabela do brasileirão */
 const gerarTabela = (dados) => {
 	tabela = [];
 	dados.forEach((x) => {

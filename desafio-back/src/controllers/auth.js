@@ -5,6 +5,7 @@ const users = require('../repositories/users');
 
 require('dotenv').config();
 
+/** Faz a autenticação do usuário */
 const autenticar = async (ctx) => {
 	const { email = null, password = null } = ctx.request.body;
 	if (!email || !password)

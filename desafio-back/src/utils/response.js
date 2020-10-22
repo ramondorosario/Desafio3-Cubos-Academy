@@ -1,3 +1,4 @@
+/** Imprime a mensagem de sucesso ou erro */
 const response = (ctx, status, mensagem, resultado) => {
 	ctx.status = status;
 	ctx.body = {

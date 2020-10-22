@@ -2,6 +2,7 @@ const jogos = require('../repositories/jogos');
 const gerarTabela = require('../utils/gerar_tabela');
 const response = require('../utils/response');
 
+/** Gera a tabela de classificação ordenana */
 const classificacao = async (ctx) => {
 	const todosOsJogos = await jogos.obterTodosOsJogos();
 	const tabela = gerarTabela(todosOsJogos);
@@ -25,6 +26,7 @@ const classificacao = async (ctx) => {
 	response(ctx, 200, 'tabela de classificação recebida', tabelaOrdenada);
 };
 
+/** Obtem todos os jogos de uma rodada em particular */
 const obterRodada = async (ctx) => {
 	const { rodada = null } = ctx.params;
 	if (!rodada) return response(ctx, 400, 'numero da rodada deve ser informado');
@@ -33,6 +35,7 @@ const obterRodada = async (ctx) => {
 	return response(ctx, 200, `jogos da rodada ${rodada}`, jogosDaRodada);
 };
 
+/** Edita o placar */
 const editarPlacar = async (ctx) => {
 	const { id = null, golsCasa = null, golsVisitante = null } = ctx.request.body;
 	if (!id || golsCasa === null || golsVisitante === null)
