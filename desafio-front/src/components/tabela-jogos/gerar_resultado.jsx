@@ -73,8 +73,8 @@ export function GerarResultado({
 					if (editarGol) {
 						const dados = {
 							id,
-							golsCasa: golsInputCasa,
-							golsVisitante: golsInputFora,
+							golsCasa: golsInputCasa || 0,
+							golsVisitante: golsInputFora || 0,
 						};
 						fetch('http://localhost:8081/jogos', {
 							method: 'POST',
@@ -87,7 +87,6 @@ export function GerarResultado({
 							.then((res) => res.json())
 							.then((res) => {
 								if (res.dados.response) {
-									console.log(res, id);
 									onPlacar(!placarAlterado);
 								}
 							});

@@ -126,7 +126,7 @@ body {
 }
 
 .partidas td {
-	padding: 0.25em 0.18em;
+	padding: 0.25em 0;
 	text-align: center;
 }
 
@@ -158,11 +158,11 @@ body {
 }
 
 .partidas .time-casa img {
-	margin-left: 0.1em;
+	margin-left: 3px;
 }
 
 .partidas .time-fora img {
-	margin-right: 0.1em;
+	margin-right: 3px;
 }
 
 .partidas .botao-td div {
@@ -207,7 +207,7 @@ body {
 
 .tabela-geral tbody td {
 	text-align: right;
-	padding: 0.3em 1em;
+	padding: 0.4em 1em;
 }
 
 .tabela-geral .time {
