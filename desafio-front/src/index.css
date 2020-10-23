@@ -39,6 +39,7 @@ body {
 
 	display: flex;
 	align-items: flex-start;
+	flex-wrap: wrap;
 }
 
 .form div {
@@ -60,6 +61,8 @@ body {
 	border: none;
 	border-radius: 0.25em;
 	font-size: 1em;
+	align-self: center;
+	margin-left: 1.5rem;
 }
 
 .form button:hover {
@@ -67,7 +70,7 @@ body {
 }
 
 .form label {
-	margin: 0 1.5em;
+	margin-left: 2em;
 }
 
 .form input {
@@ -99,7 +102,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	max-width: 26rem;
-	width: 100%;
+	min-width: 26rem;
 	margin-right: 2rem;
 	margin-bottom: 2rem;
 }
