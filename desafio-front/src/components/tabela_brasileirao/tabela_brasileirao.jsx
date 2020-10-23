@@ -271,6 +271,7 @@ export function TabelaBrasileirao({ placarAlterado }) {
 								golsFeitos={registro.golsFeitos}
 								golsSofridos={registro.golsSofridos}
 								saldoDeGols={registro.saldoDeGols}
+								escudo={registro.escudo}
 								key={registro.id}
 							/>
 						);

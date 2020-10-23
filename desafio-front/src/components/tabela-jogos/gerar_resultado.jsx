@@ -9,6 +9,8 @@ export function GerarResultado({
 	token,
 	placarAlterado,
 	onPlacar,
+	escudoTimeCasa,
+	escudoTimeVisitante,
 }) {
 	const [check, setCheck] = React.useState(false);
 	const [editarGol, setEditarGol] = React.useState(false);
@@ -17,7 +19,12 @@ export function GerarResultado({
 
 	return (
 		<tr>
-			<td className="time-casa">{timeCasa}</td>
+			<td className="time-casa">
+				<div>
+					{timeCasa}{' '}
+					<img src={escudoTimeCasa} alt={`escudo do ${escudoTimeCasa}`} />
+				</div>
+			</td>
 			{editarGol ? (
 				<td className="gols">
 					<input
@@ -47,7 +54,15 @@ export function GerarResultado({
 			) : (
 				<td className="gols">{golsFora}</td>
 			)}
-			<td className="time-fora">{timeFora}</td>
+			<td className="time-fora">
+				<div>
+					<img
+						src={escudoTimeVisitante}
+						alt={`escudo do ${escudoTimeVisitante}`}
+					/>
+					{timeFora}
+				</div>
+			</td>
 			<td
 				className="botao-td"
 				hidden={!token}

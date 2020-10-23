@@ -61,6 +61,8 @@ export function TabelaResultados({ token, placarAlterado, onPlacar }) {
 									token={token}
 									placarAlterado={placarAlterado}
 									onPlacar={onPlacar}
+									escudoTimeCasa={partida.escudo_casa}
+									escudoTimeVisitante={partida.escudo_visitante}
 									key={partida.id}
 								/>
 							);

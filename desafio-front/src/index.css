@@ -121,10 +121,25 @@ body {
 	border-collapse: collapse;
 }
 
+.partidas tr {
+	margin: 0 auto;
+}
+
 .partidas td {
-	padding: 0.25em 0.3em;
+	padding: 0.25em 0.18em;
 	text-align: center;
-	vertical-align: middle;
+}
+
+.partidas .time-casa div {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.partidas .time-fora div {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .partidas .gols {
@@ -136,21 +151,18 @@ body {
 	width: 4ch;
 }
 
-.partidas .time-casa {
-	text-align: right;
+.partidas .time-casa img,
+.partidas .time-fora img {
+	width: 1.4em;
+	height: 1.4em;
 }
 
-.partidas .time-fora {
-	text-align: left;
+.partidas .time-casa img {
+	margin-left: 0.1em;
 }
 
-.partidas .tabela {
-	position: relative;
-}
-
-.partidas .botao-td {
-	position: absolute;
-	right: 0;
+.partidas .time-fora img {
+	margin-right: 0.1em;
 }
 
 .partidas .botao-td div {
@@ -181,7 +193,7 @@ body {
 .tabela-geral thead {
 	background-color: rgb(138, 185, 157);
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.18em;
 }
 
 .tabela-geral thead td {
@@ -196,4 +208,13 @@ body {
 .tabela-geral tbody td {
 	text-align: right;
 	padding: 0.3em 1em;
+}
+
+.tabela-geral .time {
+	display: flex;
+}
+
+.tabela-geral .time img {
+	width: 1.3em;
+	margin-right: 0.25em;
 }

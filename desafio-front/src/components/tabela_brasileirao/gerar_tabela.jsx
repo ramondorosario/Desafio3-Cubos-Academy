@@ -11,11 +11,14 @@ export function GerarTabela({
 	golsFeitos,
 	golsSofridos,
 	saldoDeGols,
+	escudo,
 }) {
 	return (
 		<tr>
 			<td>{posicao}</td>
-			<td>{time}</td>
+			<td className="time">
+				<img src={escudo} alt={`escudo do ${time}`} /> {time}
+			</td>
 			<td>{pts}</td>
 			<td>{jogos}</td>
 			<td>{empate}</td>
