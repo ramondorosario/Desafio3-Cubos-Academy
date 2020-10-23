@@ -36,6 +36,20 @@ body {
 	border-radius: 0.3em;
 	border: 2px solid transparent;
 	font-size: 0.85em;
+
+	display: flex;
+	align-items: flex-start;
+}
+
+.form div {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.form label div {
+	font-size: 10px;
+	color: rgb(247, 74, 74);
+	margin-bottom: -1.3em;
 }
 
 .form button {
@@ -46,6 +60,10 @@ body {
 	border: none;
 	border-radius: 0.25em;
 	font-size: 1em;
+}
+
+.form button:hover {
+	cursor: pointer;
 }
 
 .form label {
@@ -101,6 +119,10 @@ body {
 	padding: 1rem 0;
 	font-size: 1.5em;
 	font-weight: bold;
+}
+
+.partidas-cabecalho img:hover {
+	cursor: pointer;
 }
 
 .partidas .carregando {
@@ -175,6 +197,10 @@ body {
 	height: 1.6rem;
 }
 
+.partidas .botao-td:hover {
+	cursor: pointer;
+}
+
 .partidas .botao-td img {
 	width: 100%;
 }
@@ -205,6 +231,10 @@ body {
 	height: 1em;
 }
 
+.tabela-geral thead img:hover {
+	cursor: pointer;
+}
+
 .tabela-geral tbody td {
 	text-align: right;
 	padding: 0.4em 1em;
@@ -217,4 +247,8 @@ body {
 .tabela-geral .time img {
 	width: 1.3em;
 	margin-right: 0.25em;
+}
+
+.cabecalho .erro {
+	border-color: red;
 }
